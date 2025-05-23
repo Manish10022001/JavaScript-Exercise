@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String manipulation LENGTH</title>
+    <script>
+        function SubmitClick(){
+            var username = document.getElementById("userName").value;
+            var userError = document.getElementById("userError");
+                if(username ==""){
+                    userError.innerHTML="User Name required".fontcolor('red');
+                } else{
+                    document.write("Registered...")
+            }
+        }
+
+        function VerifyName(){
+            var username = document.getElementById("userName").value;
+            var userError = document.getElementById("userError");
+                if(username.length<4){
+                    userError.innerHTML="User name too short min 4 chars.".fontcolor("red");
+                } else{
+                    userError.innerHTML="";
+                }
+                if(username.length>10){
+                    userError.innerHTML="User name too long max 10 chars.".fontcolor("red");
+                }
+        }
+
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>Username</dt>
+        <dd><input type="text" onkeyup="VerifyName()" id="userName"></dd>
+        <dd id="userError"></dd>
+    </dl>
+    <button onclick="SubmitClick()">login</button>
+</body>
+</html>

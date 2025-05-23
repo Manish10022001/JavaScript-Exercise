@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 2</title>
+    <script>
+        var title = prompt("Enter Title: ")
+        var loginName = prompt("Enter Login Name","UserName, Email, Date of Birth");
+        var loginType = prompt("Enter Login Type ","Text| Email| Date");
+        var Login = `
+                <form>
+                    <h2>${title}</h2>
+                    <dl>
+                        <dt>${loginName}</dt>
+                        <dd><input type =${loginType}></dd>
+                    </dl>
+                    <button>Login</button>
+                </form           
+            `;
+document.write(Login);
+</script>
+</head>
+<body>
+    
+</body>
+</html>
