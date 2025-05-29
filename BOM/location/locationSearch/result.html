@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let Topic =[
+            {Title:"HTML", Content:["HTML Semantics", "HTML Images", "HTML Table","HTML Forms"]},
+            {Title:"JavaScript", Content:["Variables","Datatypes","Arrays","Objects","Functions"]}
+        ];
+        function bodyLoad(){
+            let queryString  = location.search;
+            let searchString = queryString.substring(queryString.indexOf("=")+1); //if jsut "=" then
+                                                //it will return from =, but we used +1, so now index becomes
+                                                //eg. 5+1 =6 , so it will return string from index 6
+        Topic.map(topics =>{
+            if(topics.Title==searchString){
+                topics.Content.map(item =>{
+                    let li = document.createElement("li");
+                    li.innerHTML=item
+                    document.querySelector("ol").appendChild(li);
+                })
+            }
+        })
+        // for(let i=0; i<Topic[i].Content.length; i++){
+        //     if(Topic[i].Title== searchString){
+        //         for(let j=0; j<Topic.Content.length; j++){
+        //             let li = document.createElement("li");
+        //             li.innerHTML = Topic[i].Content[j];
+        //             document.querySelector("ol").appendChild(li);
+        //         }
+        //     }
+        // }
+    }
+    </script>
+</head>
+<body onload="bodyLoad()">
+        <ol>
+
+        </ol>
+</body>
+</html>

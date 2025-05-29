@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function LoginClick(){
+            let username = document.getElementById("userName").value;
+            let password = document.getElementById("password").value;
+            if(username=="manish" && password =="manish123"){
+                location.href="../shopper-template.html";
+            } else{
+                location.href="../error.html"
+            }
+        }
+    </script>
+</head>
+<body>
+    <dl>
+        <dt>User Login</dt>
+        <dd><input type="text" id="userName"></dd>
+        <dt>Password</dt>
+        <dd><input type="password" id="password"></dd>
+    </dl>
+    <button onclick="LoginClick()">Login</button>
+</body>
+</html>

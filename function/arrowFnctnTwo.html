@@ -1,0 +1,7 @@
+<script>
+    fetch("https://fakestoreapi.com/products")
+    .then(response=>response.json())
+    .then(products=>{
+        products.map(product=> document.body.innerHTML += (`<p>${product.title}</p>`) )
+    })
+</script>

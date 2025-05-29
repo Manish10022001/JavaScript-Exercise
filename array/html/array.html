@@ -1,0 +1,35 @@
+<!-- Dynamically adding elements into page:
+        step 1: Create a new html element dynamically
+                eg. var ref = document.createElement("img");
+
+        step 2: Define properties for element
+                eg. ref.id
+        step 3: Add new elements into page
+                eg. appendChild(newElement):
+                   document.querySelector("body").appendChild(ref);
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamically Adding Elements into Page</title>
+
+    <script>
+        function AddClick(){
+            // we need to store new element into a memory or reference
+            let pic = document.createElement("img");
+            pic.width="200";
+            pic.height="200";
+            pic.border="2";
+            pic.src="../public/image/shoe.jpg"
+
+            document.getElementById("container").appendChild(pic);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="AddClick()">Add Image</button>
+    <div id="container"></div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<script>
+    class Product{
+        ProductId=1;
+        Name="Samsung TV";
+        Stock= true;
+        Cities =['Delhi','Mumbai'];
+        Rating={rate:3.3,count:3033};
+    }
+    let tv = new Product;
+    document.write(`
+        ProductID = ${tv.ProductId} <br>
+        Name = ${tv.Name} <br>
+        Stock =${tv.Stock} <br>
+        Cities = ${tv.Cities.toString()} <br>
+        Rating = Rate:${tv.Rating.rate} Count:${tv.Rating.count}
+    `);
+    
+    tv.ProductId = prompt("Enter Product Id: ");
+    tv.Name = prompt("Enter Name: ");
+    tv.Stock = prompt("Enter stock");
+    tv.Cities=prompt("Enter Cities:");
+    tv.Rating.rate=prompt("Enter rating: ")
+    tv.Rating.count=prompt("Enter rate count: ")
+    document.write(`
+        ProductID = ${tv.ProductId} <br>
+        Name = ${tv.Name} <br>
+        Stock =${tv.Stock} <br>
+        Cities = ${tv.Cities.toString()} <br>
+        Rating = Rate:${tv.Rating.rate} Count:${tv.Rating.count}
+    `);
+</script>

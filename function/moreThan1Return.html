@@ -1,0 +1,48 @@
+<script>
+    function Template(template){
+        if(template == "login"){
+            return `
+                <h2>User Login</h2>
+                <dl>
+                    <dt>User Id</dt>
+                    <dd><input type="text"> </dd>
+                    <dt>Password</dt>
+                    <dd><input type="password"></dd>
+                </dl>
+                <button>Login</button>
+            `
+        } else{
+            return `
+                <h2>Register User</h2>
+                <dl>
+                    <dt>User Id</dt>
+                    <dd><input type = "text"></dd>
+                    <dt>Password</dt>
+                    <dd><input type = "password"></dd>
+                    <dt>Email</dt>
+                    <dd><input type = "email"></dd>
+                    <dt>Age</dt>
+                    <dd><input type="number"></dd>
+                </dl>
+                <button>Register</button>
+            `
+        }
+    }
+    function TemplateChange(){
+        let template = document.querySelector("select").value;
+        if(template == "login"){
+            document.querySelector("div").innerHTML = Template(template);
+        } else{
+            document.querySelector("div").innerHTML = Template(template);
+        }
+    }
+
+</script>
+<body>
+    <select onchange="TemplateChange()">
+        <option value="">Select template</option>
+        <option value="login">Submit</option>
+        <option value="register">Register</option>
+    </select>
+    <div></div>
+</body>

@@ -1,0 +1,20 @@
+<script>
+    switch(location.protocol){
+        case "http:":
+            document.write(`
+                Host Name   : ${location.host}<br>
+                Protocol    : ${location.protocol} - You are using Live Server<br>
+                Port Number : ${location.port}<br>
+                Path        : ${location.pathname}<br>
+                URL         : ${location.href}
+            `);
+            break;
+        case "file:":
+            document.write(`
+                Protocol    : ${location.protocol} - You are using File System<br>
+                Port Number : ${location.port}<br>
+                Path        : ${location.pathname}<br>
+                URL         : ${location.href}
+            `);
+    }
+</script>

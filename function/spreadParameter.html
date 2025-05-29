@@ -1,0 +1,13 @@
+<script>
+    function printDetails(id,name,price,stock){
+        document.write(`
+            Id    :${id} <br>
+            Name  :${name}<br>
+            Price :${price}<br>
+            Stock :${stock}
+        `)
+    }
+    //printDetails(...[1,"tv",343,true])
+    let value = [1,"tv",234,true];
+    printDetails(...value);
+</script>

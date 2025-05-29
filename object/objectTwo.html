@@ -1,0 +1,17 @@
+<script>
+let tv = {
+    "Name":"Samsung",
+    "Price":0,
+    "Qty": 3,
+    "Total":function(){
+        return this.Qty * this.Price;
+    },
+    "Print": function(){
+        document.write(`Name = ${this.Name} <br> Price = ${this.Price} 
+        <br> Quantity = ${this.Qty} <br> Total = ${this.Total}`);
+    }
+}
+//tv.Price = parseFloat(prompt("Enter Price: "));
+document.write(tv.Total())
+d
+</script>

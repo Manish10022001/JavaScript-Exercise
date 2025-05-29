@@ -1,0 +1,13 @@
+<script>
+    function printCollection(a,b,c,d){
+    document.write(`
+        A =${a}<br>
+        B =${b}<br>
+        C =${c}<br>
+        D =${d}
+    `)
+}
+let data = [1,2,3];
+printCollection(3,...data);
+printCollection(...data,4);
+</script>

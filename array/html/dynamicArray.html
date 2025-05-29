@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let categories=["All","Electronic","Fashion","Footwear"];
+        function AddOption(){
+            document.querySelector("select").innerHTML="";
+            document.querySelector("ol").innerHTML="";
+            document.querySelector("tbody").innerHTML="";
+            for(let item of categories){
+                //if we again add , then it will again add all elements again , so 
+                // next time we add, we don't want extra data to appear so we do
+                // above line
+                let option = document.createElement("option");
+                option.text = item;
+                option.value= item;
+                document.querySelector("select").appendChild(option)
+
+                let li = document.createElement("li");
+                li.innerHTML=item;
+                document.querySelector("ol").appendChild(li);
+                
+                let tr = document.createElement("tr");
+                let td = document.createElement("td");
+                td.innerHTML = item;
+                tr.appendChild(td);
+                document.querySelector("tbody").appendChild(tr);
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <button onclick="AddOption()">Add Option</button>
+    <select> </select>
+    <h2>Categories</h2>
+    <ol>
+
+    </ol>
+
+    <h2>Table</h2>
+    <table border="1" width="400">
+        <thead>
+            <tr>
+                <th>Categories</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>

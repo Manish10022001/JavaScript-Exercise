@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="module">
+        import {Product} from "../Module/forClassModule/product.module2.js";
+
+        function DetailsClick(){
+            var obj = new Product();
+            obj.Name = prompt("Enter Name: ");
+            obj.Price = prompt("Enter Price");
+            obj.Stock = prompt("Enter Stock: ");
+            
+            document.querySelector("p").innerHTML=`
+                Name  =${obj.Name}<br>
+                Price =${obj.Price}<br>
+                Stock =${obj.Stock}
+            `
+        }
+        document.getElementById("btnDetails").addEventListener("click",DetailsClick);
+    </script>
+</head>
+<body>
+    <button id="btnDetails">Get Details</button>
+    <p></p>
+</body>
+</html>

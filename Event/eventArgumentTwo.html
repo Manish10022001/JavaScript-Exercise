@@ -1,0 +1,14 @@
+<script>
+    function InsertClick(e,obj){
+        document.write(`
+            X position : ${e.clientX} <br>
+            CTRL Key   : ${e.ctrlKey} <br>
+            Button Id: ${obj.id}<br>
+            Button Name:${obj.name}<br>
+            Button Class: ${obj.className}
+        `)
+    }
+</script>
+<body>
+    <button id="btnInsert" class="btn btn-primary" name="insert" onclick="InsertClick(event,this)">Insert</button>
+</body>

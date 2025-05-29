@@ -1,0 +1,54 @@
+<script>
+    class Employee{
+        FirstName;
+        LastName;
+        Designation;
+        Print(){
+            document.write(`${this.FirstName} ${this.LastName} - ${this.Designation} <br>`);
+        }
+    }
+    class Developer extends Employee{
+        FirstName   = "Raj";
+        LastName    = "Kumar";
+        Designation = "Developer";
+        Role        = "Developer Role: Build, Debug, Test, Deploy";
+        Print(){
+            super.Print();
+            document.write(`${this.Role}`);
+        }
+    }
+    class Admin extends Employee{
+        FirstName   = "Ajinkya";
+        LastName    = "Mate";
+        Designation = "Admin";
+        Role        = "Admin Role : Authorization";
+        Print(){
+            super.Print();
+            document.write(`${this.Role}`)
+        }
+    }
+    class Manager extends Employee{
+        FirstName   = "Manish";
+        LastName    = "Shirsat";
+        Designation = "Manager";
+        Role        = "Manager Role: Approvals";
+        Print(){
+            super.Print();
+            document.write(`${this.Role}`)
+        }
+    }
+    //this employees object should work for all employees, if we gave new Admin then it will work
+    //only for Admin, new Developer then only developer, etc
+    //so we make it as new Array(), it can allocate multiple memeory for this object.
+    //array can allocate multiple memory
+    let Employees = new Array(new Developer(), new Admin(), new Manager());
+    let Designation = prompt("Enter Designation");
+    for (let employee of Employees){
+        if(employee.Designation === Designation){
+            employee.Print();
+        }
+    }
+</script>
+<body>
+    
+</body>

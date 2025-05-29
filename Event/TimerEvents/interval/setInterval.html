@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setInterval</title>
+    <link rel="stylesheet" href="">
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 500px;
+            text-align: center;
+        }
+    </style>
+    <script>
+       //for clearInterval, will need to keep setInterval in some memory to call it so
+        let timer; 
+        function fetchClick(){
+            document.getElementById("button-container").style.display= "none";
+            document.getElementById("statusContainer").style.display = "block";
+            timer = setInterval(setCount,30)
+        }
+        let count=0
+        function setCount(){
+            count++;
+            document.getElementById("count").innerHTML= `${count}% completed`;
+            //after count reaches 100, it should stop and image should appear
+            if(count == 100){
+                document.getElementById("statusContainer").style.display="none";
+                document.getElementById("imageContainer").style.display="block"
+
+            }
+        }   
+        function puaseClick(){
+            clearInterval(timer);
+            document.getElementById("count").innerHTML= `${count}% paused`;
+        }
+        //on resumeClick setCount function should be called again
+        function resumeClick(){
+            timer = setInterval(setCount,30);
+            document.getElementById("count").innerHTML= `${count}% completed`;
+        }
+    </script>
+</head>
+<body>
+    <div>
+        <div id="button-container">
+            <button onclick="fetchClick()" class="btn btn-primary">Fetch</button>
+        </div>
+        <div id="statusContainer" style="display:none;">
+            <div>Loading..</div>
+            <p id="count"></p>
+            <div>
+                <button onclick="puaseClick()">pause</button>
+                <button onclick="resumeClick()">resume</button>
+            </div>
+        </div>
+        <div id="imageContainer" style="display: none;">
+            <img src="../images\bg-image.png" width="300" height="300">
+        </div>
+    </div>
+</body>
+</html>

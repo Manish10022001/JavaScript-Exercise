@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function InsertClick(obj,...product){
+            let [id,name,stock,rating]=product;
+            document.write(`
+                ID      : ${id}<br>
+                Name    : ${name}<br>
+                Stock   : ${stock}<br>
+                Rating  : ${rating.rate} [${rating.count}] <br>
+                BtnID   : ${obj.id}
+            `)
+        }
+    </script>
+</head>
+<body>
+    <!-- custom argument with default argument -->
+    <button id="btnInert" onclick="InsertClick(this,1,'Samsung TV',true,{rate:4.5, count:3333})">Insert</button>
+</body>
+</html>

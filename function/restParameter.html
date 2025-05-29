@@ -1,0 +1,13 @@
+<script>
+    function products(title,...details){
+        let [id,name,price,stock]=details;
+        document.write(`
+            <h2>${title}</h2>
+            Id    :${id} <br>
+            Name  :${name}<br>
+            Price :${price}<br>
+            Stock :${stock}
+        `)
+    }
+    products("Product Details",1,"tv",34343,true);
+</script>
